@@ -5,11 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мастерская электроники 'У Санечки'</title>
     <style>
+      /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+      } */
+
+      /* АНИМИРОВАННЫЙ ФОН */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: linear-gradient(
+          -45deg,
+          #02634925,
+          #38c7d4a1,
+          #a6c2408a,
+          #5914d878
+        );
+
+        background-size: 400% 400%;
+        animation: gradientMove 12s ease infinite;
+        z-index: -1;
+
+        background-image: url("./Airbrush-IMAGE-ENHANCER-1775499914898-1775499914899\ \(1\).png");
+      }
+
+      /* АНИМАЦИЯ */
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Контент поверх */
+      .content {
+        position: relative;
+        color: rgb(153, 143, 143);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 40vh;
+      }
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: #0f0f0f;
-        color: #fff;
       }
       header {
         padding: 20px;
@@ -29,14 +83,27 @@
         text-align: center;
       }
       .hero h1 {
+        color: #ada3a3;
         font-size: 36px;
         margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #b220c2ef;
+      }
+
+      p {
+        color: #bc15c2d1;
+      }
+
+      h4 {
+        color: #bd24c8;
       }
       .btn {
         display: inline-block;
         padding: 10px 20px;
         background: #fff;
-        color: #000;
+        color: #d4b3b3;
         text-decoration: none;
         margin-top: 10px;
         border: none;
@@ -53,7 +120,7 @@
         gap: 20px;
       }
       .card {
-        background: #1a1a1a;
+        background: #ffffff;
         padding: 20px;
         border-radius: 10px;
       }
@@ -127,23 +194,21 @@
       <div class="contact-info">
         <p>
           <strong>Телефон:</strong>
-          <a href="tel:+380XXXXXXXXX" style="color: #fff"
-            >+38 (0XX) XXX-XX-XX</a
-          >
+          <a href="+38 0966968398" style="color: #fff">096 696 83 98</a>
         </p>
-        <p><strong>Адрес:</strong> г. Одесса, ул. Примерная 10</p>
+        <p><strong>Адрес:</strong> місто Овідіопіль, центральний ринок</p>
 
         <button class="btn" onclick="openMap()">Построить маршрут</button>
         <a
           class="btn"
-          href="https://www.google.com/maps?q=46.4825,30.7233"
+          href="https://www.google.com/maps?q=46.245636,30.438833"
           target="_blank"
-          >Открыть в Google Maps</a
+          >Ми в Google Maps</a
         >
       </div>
 
       <iframe
-        src="https://www.google.com/maps?q=46.4825,30.7233&output=embed"
+        src="https://www.google.com/maps?q=46.245636,30.438833output=embed"
       ></iframe>
       <!-- 
   <form id="form">
@@ -165,8 +230,8 @@
             const userLat = position.coords.latitude;
             const userLng = position.coords.longitude;
 
-            const shopLat = 46.4825;
-            const shopLng = 30.7233;
+            const shopLat = 46.245636;
+            const shopLng = 30.438833;
 
             const url = `https://www.google.com/maps/dir/${userLat},${userLng}/${shopLat},${shopLng}`;
             window.open(url, "_blank");
